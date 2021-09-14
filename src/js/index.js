@@ -12,6 +12,7 @@ import "../styles/index.scss";
 import Home from "./component/home.jsx";
 
 //render your react application
+
 let centenaMil = 0;
 let decenaMil = 0;
 let unidadMil = 0;
@@ -19,6 +20,21 @@ let centena = 0;
 let contador = 0;
 let unidad = 0;
 let decena = 0;
+
+let contar = true;
+
+const pause = () => {
+	contar = false;
+};
+
+const resume = () => {
+	contar = true;
+};
+
+const reset = () => {
+	contador = 0;
+	resume();
+};
 
 setInterval(
 	function() {
@@ -29,18 +45,33 @@ setInterval(
 		decena = Math.floor(contador / 10) % 10;
 		unidad = Math.floor(contador) % 10;
 
-		ReactDOM.render(
-			<Home
-				unidad={unidad}
-				decena={decena}
-				centena={centena}
-				unidadMil={unidadMil}
-				decenaMil={decenaMil}
-				centenaMil={centenaMil}
-			/>,
-			document.querySelector("#app")
-		);
-		contador++;
+		if (contar) {
+			ReactDOM.render(
+				<div className="contador cuerpo">
+					<Home
+						unidad={unidad}
+						decena={decena}
+						centena={centena}
+						unidadMil={unidadMil}
+						decenaMil={decenaMil}
+						centenaMil={centenaMil}
+					/>
+					<div className="botones">
+						<button className="cajita boton" onClick={reset}>
+							RESET
+						</button>
+						<button className="cajita boton" onClick={pause}>
+							PAUSE
+						</button>
+						<button className="cajita boton" onClick={resume}>
+							RESUME
+						</button>
+					</div>
+				</div>,
+				document.querySelector("#app")
+			);
+			contador++;
+		}
 	},
 
 	1000 //en ms

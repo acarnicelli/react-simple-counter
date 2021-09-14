@@ -13,14 +13,18 @@
 */
 
 .contador {
-    height: 100vh;
-    align-items: center;
     display: flex;
     justify-content: center;
     gap: 10px;
     background: black;
-    border-radius: 10px;
 }
+
+.cuerpo {
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
 
 .cajita {
     height: 100vh;
@@ -39,4 +43,19 @@
 
 .icono {
     width: 100px;
+}
+
+.boton {
+    font-size: 20px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    margin: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.botones {
+    display: flex;
+    gap: 15 px;
 }
