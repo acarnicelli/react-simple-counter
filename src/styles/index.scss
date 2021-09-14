@@ -11,3 +11,32 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.contador {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: black;
+    border-radius: 10px;
+}
+
+.cajita {
+    height: 100vh;
+    align-items: center;
+    width: 75px;
+    height: 100px;
+    border-radius: 15px;
+    background: rgb(10, 10, 10);
+    color: white;
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(1px 1px 3px #61dafb);
+    text-shadow: 0px 0px 20px #61dafb;
+}
+
+.icono {
+    width: 100px;
+}
